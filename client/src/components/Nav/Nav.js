@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Nav(props) {
   return (
@@ -6,9 +7,8 @@ function Nav(props) {
       <div class="nav-wrapper">
         <a href="#" class="brand-logo right">Logo</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><a href="">Личный кабинет</a></li>
-          <li><a href="">Войти</a></li>
-          <li><a href="">Регистрация</a></li>
+          <li><Link to='/login'>Войти</Link></li>
+          <li><Link to='/registration'>Регистрация</Link></li>
         </ul>
       </div>
     </nav>
