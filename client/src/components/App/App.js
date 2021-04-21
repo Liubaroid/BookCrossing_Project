@@ -7,7 +7,9 @@ import Login from "../Login/Login";
 import Test from "../Test/Test";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-
+import Main from "../Main/Main";
+import Footer from "../Footer/Footer";
+import ShareBook from "../ShareBook/ShareBook";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,9 +42,16 @@ function App() {
          <Route path='/test'>
            <Test/>
         </Route> 
+         <Route path='/share'>
+           <ShareBook />
+         </Route>
+         <Route path='/'>
+           <Main />
+         </Route>
        </Switch>
-       {(!isLogin) ? <Redirect to={"/login"}/> : null}
-       {(isLogin) ? <Redirect to={"/test"}/> : null}
+        {(!isLogin) ? <Redirect to={"/login"}/> : null}
+        {(isLogin) ? <Redirect to={"/test"}/> : null}
+       <Footer />
      </BrowserRouter>
     </div>
   );
