@@ -14,6 +14,7 @@ router.post('/login', async (req, res) => {
   if (user) {
     req.session.username = login;
     req.session.uid = user._id;
+    console.log('LOGIN',req.session.uid);
     status = true;
   }
 
@@ -49,12 +50,13 @@ router.get('/exit', (req, res) => {
 //  Проверка на auth
 router.get('/auth', async(req, res) => {
   const id = req.session.uid;
+  console.log('AUTH',id);
   if (!id) {
     res.status(401).end();
     return
   }
  const user = await User.findById(id);
- res.status(200).json({ login: user.login, id: id });
+ res.json({ login: user.login, id: id });
 });
 
 module.exports = router;
