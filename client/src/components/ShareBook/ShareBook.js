@@ -13,8 +13,14 @@ function ShareBook(props) {
             </div>
             <div className="row">
         <div className="input-field col s12">
-          <input id="book" type="text" className="validate"/>
-          <label for="book">Название книги</label>
+          <input id="book-adress" type="text" className="validate"/>
+          <label for="book-adress">Адрес книги</label>
+        </div>
+      </div>
+            <div className="row">
+        <div className="input-field col s12">
+          <input id="book-name" type="text" className="validate"/>
+          <label for="book-name">Название книги</label>
         </div>
       </div>
 
@@ -24,7 +30,7 @@ function ShareBook(props) {
           <label for="book-info">Описание книги</label>
         </div>
       </div>
-      <a class="waves-effect waves-light btn">Поделиться</a>
+      <a className="waves-effect waves-light btn orange">Поделиться</a>
           </div>
         </div>
       </div>

@@ -8,10 +8,8 @@ function TakeBook(props) {
           <div className="card-content">
             <h6>Текст с информацией для пользователя</h6>
           </div>
-          <div className="">
-            <h3>Место для карты</h3>
-          </div>
-          <a class="waves-effect waves-light btn">Взять</a>
+          <input type="text" className="center" placeholder="Ввести номер книги" />
+          <a className="waves-effect waves-light btn orange">Взять</a>
         </div>
       </div>
     </div>
