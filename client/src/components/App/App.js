@@ -50,7 +50,7 @@ function App() {
          </Route>
        </Switch>
         {(!isLogin) ? <Redirect to={"/login"}/> : null}
-        {(isLogin) ? <Redirect to={"/test"}/> : null}
+        {(isLogin) ? <Redirect to={"/"}/> : null}
        <Footer />
      </BrowserRouter>
     </div>

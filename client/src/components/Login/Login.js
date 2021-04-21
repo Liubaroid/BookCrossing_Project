@@ -1,8 +1,10 @@
 import React from 'react';
 import { useRef } from 'react';
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 function Registration(props) {
+const history = useHistory();
 const dispatch = useDispatch();
 const loginHandler = async () => {
 
@@ -22,6 +24,7 @@ const loginHandler = async () => {
   const { login, id } = await response.json();
   if (login) {
    dispatch({type: 'LOGIN', payload: login}); 
+   history.push('/');
   }
 }
 

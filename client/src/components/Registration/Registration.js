@@ -1,7 +1,11 @@
 import React from 'react';
-import { useRef } from 'react'
-function Registration(props) {
+import { useRef } from 'react';
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
+function Registration(props) {
+const history = useHistory();
+const dispatch = useDispatch();
 const regHandler = async () => {
   
 const uname = name.current.value;
@@ -16,6 +20,9 @@ const response = await fetch('http://localhost:8080/users/register', {
         password: upass,
       }),
     });
+if (response.status === 500) return
+dispatch({type: 'LOGIN', payload: uname});
+history.push('/');
 }
 
 const name = useRef();
