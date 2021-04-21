@@ -27,7 +27,6 @@ function ShareBook(props) {
       <a class="waves-effect waves-light btn">Поделиться</a>
           </div>
         </div>
-
       </div>
   );
 }

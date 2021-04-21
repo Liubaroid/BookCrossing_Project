@@ -14,7 +14,7 @@ function Main(props) {
             </div>
             <div className="card-action">
               <a href="/share">Поделиться книгой</a>
-              <a href="">Взять книгу</a>
+              <a href="/take">Взять книгу</a>
             </div>
           </div>
         </div>
