@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 function Nav(props) {
   return (
     <nav>
-      <div className="nav-wrapper">
+      <div className="nav-wrapper blue">
         <a href="#" className="brand-logo left">Logo</a>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <li><Link to='/'>Главная</Link></li>
           <li><Link to='/login'>Войти</Link></li>
           <li><Link to='/registration'>Регистрация</Link></li>
         </ul>
