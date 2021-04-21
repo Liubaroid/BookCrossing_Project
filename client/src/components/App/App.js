@@ -6,6 +6,9 @@ import Login from "../Login/Login";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ShareBook from "../ShareBook/ShareBook";
+import TakeBook from "../TakeBook/TakeBook";
+import User from "../UserPage/UserPage";
+import UserPage from "../UserPage/UserPage";
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
      <BrowserRouter>
        <Nav />
        <Switch>
+       <Route path='/user'>
+           <UserPage />
+         </Route>
        <Route path='/registration'>
            <Registration />
          </Route>
@@ -21,6 +27,9 @@ function App() {
          </Route>
          <Route path='/share'>
            <ShareBook />
+         </Route>
+         <Route path='/take'>
+           <TakeBook />
          </Route>
          <Route path='/'>
            <Main />
