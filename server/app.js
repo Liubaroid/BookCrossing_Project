@@ -9,6 +9,7 @@ const { connect, dbPath } = require('./connectDb');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const booksRouter = require('./routes/books.js');
 
 const app = express();
 connect();
@@ -35,6 +36,8 @@ app.use(
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/books', booksRouter);
+
 
 app.listen(8080, () => {
   console.log('Server Started');

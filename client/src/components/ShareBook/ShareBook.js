@@ -41,20 +41,20 @@ const submitHandler = async() => {
             <div className="row">
         <div className="input-field col s12">
           <input id="book-adress" type="text" className="validate" ref={adress}/>
-          <label for="book-adress">Адрес книги</label>
+          <label htmlFor="book-adress">Адрес книги</label>
         </div>
       </div>
             <div className="row">
         <div className="input-field col s12">
-          <input id="book-name" type="text" className="validate"ref={bookName}/>
-          <label for="book-name">Название книги</label>
+          <input id="book-name" type="text" className="validate" ref={bookName}//>
+          <label htmlFor="book-name">Название книги</label>
         </div>
       </div>
 
       <div className="row">
         <div className="input-field col s12">
-          <input id="book-info" type="text" className="validate"ref={bookDescription}/>
-          <label for="book-info">Описание книги</label>
+          <input id="book-info" type="text" className="validate" ref={bookDescription}/>
+          <label htmlFor="book-info">Описание книги</label>
         </div>
       </div>
 

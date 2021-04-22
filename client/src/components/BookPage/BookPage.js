@@ -8,7 +8,7 @@ function BookPage(props) {
       <p className="">Описание книги</p>
       <h5 className="">Комментарии:</h5>
       <p>контейнер для комментов???</p>
-      <hr/>
+      <hr />
       <input type="text" className="center" placeholder="Ввести комментарий" />
       <a className="waves-effect waves-light btn orange">Добавить</a>
       <hr />

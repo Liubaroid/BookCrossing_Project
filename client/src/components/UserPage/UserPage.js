@@ -9,11 +9,11 @@ function UserPage(props) {
         <h5>Обо мне</h5>
         <p>Информация пользователя</p>
       </div>
-      <ul class="collection with-header">
-        <li class="collection-header"><h4>Мои книги</h4></li>
-        <li class="collection-item"><div>Книга 1<a href="" class="secondary-content">
+      <ul className="collection with-header">
+        <li className="collection-header"><h4>Мои книги</h4></li>
+        <li className="collection-item"><div>Книга 1<a href="" className="secondary-content">
           <Link to='/book'><i class="material-icons">send</i></Link></a></div></li>
-        <li class="collection-item"><div>Книга 2<a href="" class="secondary-content">
+        <li className="collection-item"><div>Книга 2<a href="" className="secondary-content">
           <Link to='/book'><i class="material-icons">send</i></Link></a></div></li>
       </ul>
     </div>
