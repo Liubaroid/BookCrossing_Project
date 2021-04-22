@@ -11,8 +11,8 @@ function Nav(props) {
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           {(isLogin) ? <li><Link to='/'>Главная</Link></li> : null}
           {(isLogin) ? <li><Link to='/user'>Моя страница</Link></li> : null}
-          <li><Link to='/login'>Войти</Link></li>
-          <li><Link to='/registration'>Регистрация</Link></li>
+          {(!isLogin) ? <li><Link to='/login'>Войти</Link></li> : null}
+          {(!isLogin) ? <li><Link to='/registration'>Регистрация</Link></li>: null}
         </ul>
       </div>
     </nav>

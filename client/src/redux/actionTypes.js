@@ -1,2 +1,3 @@
 export const LOGIN = 'LOGIN';
-export const BOOK = 'BOOK'
+export const SETCOORDINATES = 'SETCOORDINATES';
+export const BOOK = 'BOOK';
