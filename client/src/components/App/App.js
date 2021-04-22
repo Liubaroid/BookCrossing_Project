@@ -13,6 +13,7 @@ import ShareBook from "../ShareBook/ShareBook";
 import TakeBook from "../TakeBook/TakeBook";
 import User from "../UserPage/UserPage";
 import UserPage from "../UserPage/UserPage";
+import BookPage from "../BookPage/BookPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -54,12 +55,15 @@ function App() {
          <Route path='/take'>
            <TakeBook />
          </Route>
+         <Route path='/book'>
+           <BookPage />
+         </Route>
          <Route path='/'>
            <Main />
          </Route>
        </Switch>
-        {(!isLogin) ? <Redirect to={"/login"}/> : null}
-        {(isLogin) ? <Redirect to={"/"}/> : null}
+        {/* {(!isLogin) ? <Redirect to={"/login"}/> : null}
+        {(isLogin) ? <Redirect to={"/"}/> : null} */}
        <Footer />
      </BrowserRouter>
     </div>
