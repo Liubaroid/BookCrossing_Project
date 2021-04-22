@@ -1,11 +1,14 @@
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import "./Test.css" 
 
 const Test = () => {
-  const position = [51.505, -0.09];
+  const dispatch = useDispatch();
+  const [position, setPosition] = useState([51.505, -0.09]);
   const handleClick = (e) => {
-  
-        //e.latlng;
+        setPosition(e.latlng);
+        dispatch({type: 'SETCOORDINATES', payload : {lat: e.latlng.lat, lng:e.latlng.lng} })
   }
   return ( 
     <div>
@@ -15,9 +18,6 @@ const Test = () => {
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
     <Marker position={position}>
-      <Popup>
-        "Незнайка на луне". <br /> by user 123.
-      </Popup>
     </Marker>
     </Map>
     </div>
