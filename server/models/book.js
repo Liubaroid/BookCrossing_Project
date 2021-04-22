@@ -5,6 +5,8 @@ const bookSchema = new mongoose.Schema({
   name: { type: String, required: true },
   info: String,
   adress: String,
+  latitude: Number,
+  longitude: Number,
   isFound: Boolean,
   comments: [{
     userName: String,
