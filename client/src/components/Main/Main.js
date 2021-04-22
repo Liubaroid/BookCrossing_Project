@@ -3,7 +3,7 @@ import Test from '../Test/Test'
 import { Link } from "react-router-dom";
 
 function Main(props) {
- 
+
   return (
     <div className="center">
       <div className="col s12 m7">
