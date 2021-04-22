@@ -1,6 +1,7 @@
 import React from 'react';
-
+import Test from '../Test/Test'
 function Main(props) {
+ 
   return (
     <div className="center">
         <div className="col s12 m7">
@@ -9,8 +10,8 @@ function Main(props) {
             <div className="card-content">
               <h6>Информация о сервисе</h6>
             </div>
-            <div className="">
-              <h3>Место для карты</h3>
+            <div className="center">
+              <Test/>
             </div>
             <div className="card-action">
               <a href="/share">Поделиться книгой</a>
