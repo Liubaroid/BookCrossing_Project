@@ -10,7 +10,7 @@ function Nav(props) {
         <a href="#" className="brand-logo left">Logo</a>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           {(isLogin) ? <li><Link to='/'>Главная</Link></li> : null}
-          <li><Link to='/user'>Моя страница</Link></li>
+          {(isLogin) ? <li><Link to='/user'>Моя страница</Link></li> : null}
           <li><Link to='/login'>Войти</Link></li>
           <li><Link to='/registration'>Регистрация</Link></li>
         </ul>
