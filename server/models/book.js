@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { Types } = mongoose
 
 const bookSchema = new mongoose.Schema({
   id: String,
@@ -13,10 +12,12 @@ const bookSchema = new mongoose.Schema({
   }],
   moovings: [{
     userName: String,
-    coordinates: Number
+    latitude: Number,
+    longitude: Number
   }],
-  creator: { type: Types.ObjectId },
-  founders: [{ type: Types.ObjectId }]
+  creator: String,
+  founders: String,
+  currentOwner: String
 
 });
 
