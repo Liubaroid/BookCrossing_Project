@@ -9,7 +9,7 @@ const options = {
   useFindAndModify: false,
   };
 
-const dbPath = 'mongodb://localhost:27017/bookcrossing';
+const dbPath = 'mongodb+srv://c:p@cluster0.qju1t.mongodb.net/bookcrossing?retryWrites=true&w=majority';
 
 const connect = () => {
   mongoose.connect(dbPath, options)
