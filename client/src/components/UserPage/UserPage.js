@@ -1,7 +1,20 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { useState,useEffect } from 'react'
 
 function UserPage(props) {
+ let [userBooks, setUserBooks] = useState()
+  const userBookFetch = async() => {
+    let response = await fetch('http://localhost:8080/book/:userName')
+    let { userBooks } = await response.json();
+    console.log(userBooks);
+    setUserBooks(userBooks);
+  }
+
+  useEffect(()=>{
+    userBookFetch()
+  } ,[])
+
   return (
     <div>
       <div className='center'>
