@@ -46,7 +46,7 @@ const submitHandler = async() => {
       </div>
             <div className="row">
         <div className="input-field col s12">
-          <input id="book-name" type="text" className="validate" ref={bookName}//>
+          <input id="book-name" type="text" className="validate" ref={bookName}/>
           <label htmlFor="book-name">Название книги</label>
         </div>
       </div>
