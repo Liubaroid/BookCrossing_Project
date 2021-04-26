@@ -30,12 +30,20 @@ router.patch('/take', async (req, res) => {
 })
 
 router.patch('/give', async (req, res) => {
-  const { id, adress, latitude, longitude } = req.body;
-  const book = await Book.findOne({_id: id});
-  book.isFound = false,
-  book.adress = adress,
-  book.latitude = latitude,
-  book.longitude = longitude
+  let { id, userName, adress, latitude, longitude } = req.body;
+  let book1 = await Book.findOne({_id: id});
+  book1.isFound = false,
+  book1.adress = adress,
+  book1.latitude = latitude,
+  book1.longitude = longitude,
+  await book1.save()
+  let book = await Book.findOne({_id: id});
+  book.moovings.push({
+    userName: userName,
+    adress: adress,
+    latitude: latitude,
+    longitude: longitude
+  })
   await book.save()
   res.status(200).json({success: true})
 })
@@ -43,7 +51,7 @@ router.patch('/give', async (req, res) => {
 
 router.post('/comment', async (req, res) => {
   const { login, comment, bookId } = req.body;
-  console.log(req.body);
+  // console.log(req.body);
   const book = await Book.findOne({_id: bookId});
   book.comments.push({ userName: login, comments: comment }),
   await book.save();
@@ -52,7 +60,7 @@ router.post('/comment', async (req, res) => {
 
 router.get('/comment/:bookId', async (req, res) => {
   const bookId = req.params.bookId;
-  console.log(bookId);
+  // console.log(bookId);
   const book = await Book.findOne({_id: bookId});
   res.status(200).json(book.comments)
 })
@@ -61,9 +69,9 @@ router.get('/comment/:bookId', async (req, res) => {
 
 router.get('/take/:id', async (req, res) => {
  const id = req.params.id
- console.log(id);
+//  console.log(id);
  const book  = await Book.findOne({ _id: id });
- console.log(book);
+//  console.log(book);
   if (book) {
     res.status(200).json({success: true})
   } res.status(404)

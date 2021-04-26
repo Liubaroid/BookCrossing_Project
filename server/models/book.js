@@ -19,6 +19,7 @@ const bookSchema = new mongoose.Schema({
   moovings: [
     {
       userName: { type: String, default: '' },
+      adress: { type: String, default: '' },
       latitude: { type: Number, default: '' },
       longitude: { type: Number, default: '' },
     },
