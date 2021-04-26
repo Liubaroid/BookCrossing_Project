@@ -1,43 +1,51 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useSelector } from "react-redux";
 
-function UserPage(props) {
-const { userName } = useSelector((state) => state);
-let [userBooks, setUserBooks] = useState()
-const userBookFetch = async() => {
-alert('!');
-let response = await fetch(`http://localhost:8080/books/${userName}`)
-let userBooks = await response.json();
-console.log(userBooks);
-setUserBooks(userBooks);
-}
+function UserPage() {
+  const { userName } = useSelector((state) => state);
+  let [userBooks, setUserBooks] = useState()
+  let [takenBooks, setTakenBooks] = useState()
 
-useEffect(()=>{
-userBookFetch()
-} ,[])
-
-return (
-  <div>
-  <div className='center'>
-  <h4>Моя страница</h4>
-  <h5>Обо мне</h5>
-  <p>Информация пользователя</p>
-  </div>
-  <ul className="collection with-header">
-  {/* <li className="collection-header"><h4>Мои книги</h4></li> */}
-  <li> <a href="" className="secondary-content">
-  <Link to='/book'>Книга<i class="material-icons">send</i></Link></a>
-  </li> 
- {/* {userBooks.map(el => ( <li className="collection-item" key= {el.id}>{el.name}</li> ))} */}
-  {/* <a href="" className="secondary-content">
-  <Link to='/book'><i class="material-icons">send</i></Link></a>
-  </li> */}
-  
-  </ul>
-  </div>
-  );
+  const userBookFetch = async () => {
+    let response = await fetch(`http://localhost:8080/books/${userName}`)
+    let {userBooks, takenBooks} = await response.json();
+    // console.log(userBooks[0].id);
+    setUserBooks(userBooks);
+    setTakenBooks(takenBooks);
   }
+
+  useEffect(() => {
+    userBookFetch()
+  }, [])
+
+  return (
+    <div>
+      <div className='center'>
+        <h4>Привет, {userName} !</h4>
+        <p>Информация для пользователя</p>
+      </div>
+      <ul className="collection with-header">
+        <h5 className="collection-header">Твои книги:</h5>
+        {userBooks && userBooks.map(el => (<li className="collection-item" key={el.id}>{el.name}
+          <a href='' className="secondary-content">
+            <Link to={`/books/${el._id}`}><i class="material-icons">send</i></Link></a>
+        </li>
+        ))}
+
+      </ul>
+
+      <ul className="collection with-header">
+        <h5 className="collection-header">Взятые книги:</h5>
+        {takenBooks && takenBooks.map(el => (<li className="collection-item" key={el.id}>{el.name}
+          <a href='' className="secondary-content">
+            <Link to={`/books/${el._id}`}><i class="material-icons">send</i></Link></a>
+        </li>
+        ))}
+
+      </ul>
+    </div>
+)}
   
   export default UserPage; 

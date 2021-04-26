@@ -2,6 +2,9 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
+const cookieParser = require("cookie-parser");
+const FileStore = require("session-file-store")(session);
+const { cookiesCleaner } = require("./authConfiq");
 const MongoStore = require('connect-mongo');
 const cors = require('cors');
 
@@ -23,6 +26,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
 
 app.use(
   session({
@@ -34,10 +38,24 @@ app.use(
   })
 );
 
+// app.use(
+//   session({
+//     store: new FileStore(),
+//     key: "user_sid",
+//     secret: "anything here",
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: {
+//       expires: 6000000
+//     }
+//   })
+// );
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/books', booksRouter);
 
+app.use(cookiesCleaner);
 
 app.listen(8080, () => {
   console.log('Server Started');

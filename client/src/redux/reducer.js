@@ -13,7 +13,7 @@ export default function reducer(state = initState, { type, payload }) {
       return { ...state, isLogin: true, userName: payload };
     case action.SETCOORDINATES:
       return { ...state, currentLng: payload.lng, currentLat: payload.lat };
-   
+
     default:
       return state;
   }

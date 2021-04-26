@@ -1,25 +1,25 @@
 const mongoose = require('mongoose');
 
 const bookSchema = new mongoose.Schema({
-  id: String,
+  id: {type: String, default: ''},
   name: { type: String, required: true },
-  info: String,
-  adress: String,
-  latitude: Number,
-  longitude: Number,
-  isFound: Boolean,
+  info: {type: String, default: ''},
+  adress: {type: String, default: ''},
+  latitude: {type: Number, default: ''},
+  longitude: {type: Number, default: ''},
+  isFound: {type: Boolean, default: false},
   comments: [{
-    userName: String,
-    comment: String
+    userName: {type: String, default: ''},
+    comments: {type: String, default: ''},
   }],
   moovings: [{
-    userName: String,
-    latitude: Number,
-    longitude: Number
+    userName: {type: String, default: ''},
+    latitude: {type: Number, default: ''},
+    longitude: {type: Number, default: ''},
   }],
-  creator: String,
-  founders: String,
-  currentOwner: String
+  creator: {type: String, default: ''},
+  founders: [{type: String, default: ''}],
+  currentOwner: {type: String, default: ''},
 
 });
 

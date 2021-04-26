@@ -25,7 +25,8 @@ const submitHandler = async() => {
       longitude: currentLng,
     }),
   });
-  history.push('/');
+  let book = await addBookResponse.json()
+  history.push(`/books/${book._id}`);
 }
   const { currentLng, currentLat, userName } = useSelector((state) => state);
   return (
@@ -33,46 +34,48 @@ const submitHandler = async() => {
         <div className="col s12 m7">
           <div className="card">
             <div className="card-content">
-              <h6>Выбери место на карте, где бы ты хотел заложить книгу</h6>
+              <h5>Поделись книгой!</h5>
             </div>
             <div className="">
-              <MapClickable/>
-            </div>
-            <div className="row">
         <div className="input-field col s12">
           <input id="book-adress" type="text" className="validate" ref={adress}/>
           <label htmlFor="book-adress">Адрес книги</label>
         </div>
       </div>
-            <div className="row">
+            <div className="">
         <div className="input-field col s12">
           <input id="book-name" type="text" className="validate" ref={bookName}/>
           <label htmlFor="book-name">Название книги</label>
         </div>
       </div>
 
-      <div className="row">
+      <div className="">
         <div className="input-field col s12">
           <input id="book-info" type="text" className="validate" ref={bookDescription}/>
           <label htmlFor="book-info">Описание книги</label>
         </div>
       </div>
 
-     <div className="row">
+     <div className="">
         <div className="input-field col s12">
           <input id="book-info" type="text" className="validate"value={currentLat}/>
           <label for="book-info">Lat</label>
         </div>
       </div>
 
-      <div className="row">
+      <div className="">
         <div className="input-field col s12">
           <input id="book-info" type="text" className="validate" value={currentLng}/>
           <label for="book-info">Lng</label>
         </div>
       </div>
-
-      <a className="waves-effect waves-light btn orange" onClick = {submitHandler} >Поделиться</a>
+      <div className="">
+            <h6>Выбери место на карте</h6>
+          </div>
+            <div className="">
+              <MapClickable/>
+            </div>
+      <button className="waves-effect waves-light btn orange" onClick = {submitHandler} style={{margin: '1rem'}}>Поделиться</button>
           </div>
         </div>
       </div>

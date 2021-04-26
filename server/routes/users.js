@@ -1,5 +1,6 @@
 const express = require('express');
 const sha256 = require('sha256');
+const { sessionChecker } = require("../authConfiq.js");
 const User = require('../models/user');
 
 const router = express.Router();
