@@ -15,7 +15,7 @@ console.log(e.target.bookId.value);
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      id: e.target.bookId.value,
+      id: e.target.bookId.value.trim(),
       adress: e.target.bookAdress.value,
       userName: userName,
       latitude: currentLat,

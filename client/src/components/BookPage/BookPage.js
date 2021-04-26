@@ -10,7 +10,6 @@ function BookPage(props) {
   const commentText = useRef();
   const { userName } = useSelector((state) => state);
 
-
   const setCommentHandler = async () => {
 
     const response = await fetch('http://localhost:8080/books/comment', {
@@ -24,7 +23,6 @@ function BookPage(props) {
       }),
     });
   }
-
 
   useEffect(() => {
     fetch(`http://localhost:8080/books/id/${id}`, {
@@ -47,7 +45,7 @@ function BookPage(props) {
   return (
     <div className="col s12 m7 container">
       <h4 className="collection-item center orange-text" style={{ margin: '2rem' }}>{book?.name}</h4>
-      <h5 className="collection-item center">Уникальный номер книги: {book?._id}</h5>
+      <h5 className="collection-item center">Уникальный номер книги: {book?.id}</h5>
       <p className="center" style={{ margin: '2rem' }}>{book?.info}</p>
       {book?.currentOwner ? <p className="center" style={{ margin: '2rem' }}>Текущий владелец: {book?.currentOwner}</p> : 
       <p className="center" style={{ margin: '2rem' }}>Книга сейчас заложена</p>}
@@ -58,11 +56,8 @@ function BookPage(props) {
          <i class="material-icons">place</i>
          {el.adress};
          <span class="badge">{el.userName}</span></div>
-     </li></div>))}
-      
-     
+     </li></div>))}     
 </ul> 
-
 
       <h6 className="" style={{ margin: '2rem' }}>Комментарии:</h6>
       <ul className="collection ">
@@ -76,7 +71,6 @@ function BookPage(props) {
             </li>
           </div>
         ))}
-
       </ul>
 
       <input type="text" className="center" placeholder="Ввести комментарий" ref={commentText} />
