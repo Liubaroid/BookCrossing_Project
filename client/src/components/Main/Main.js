@@ -1,5 +1,6 @@
 import React from 'react';
 import Test from '../Test/Test'
+import CityClicker from '../CityClicker/CityClicker'
 import { Link, useHistory } from "react-router-dom";
 
 function Main(props) {
@@ -53,6 +54,10 @@ function Main(props) {
                 <button className="waves-effect waves-light btn orange" style={{ margin: '1rem' }}>Найти книгy</button>
               </div>
             </form>
+          </div>
+
+          <div className="center">
+            <CityClicker />
           </div>
 
           <div className="center">

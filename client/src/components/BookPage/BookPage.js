@@ -23,8 +23,6 @@ const setCommentHandler = async () => {
       bookId: id,
     }),
   });
-  const result = await response.json();
-  alert(result);
 }
 
 

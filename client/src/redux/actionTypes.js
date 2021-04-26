@@ -2,6 +2,7 @@ export const LOGIN = 'LOGIN';
 export const SETCOORDINATES = 'SETCOORDINATES';
 export const SETCOORDINATES_2 = 'SETCOORDINATES_2';
 export const BOOK = 'BOOK';
+export const SETCITY = 'SETCITY';
 
 export const types = {
   LOGIN: 'LOGIN',

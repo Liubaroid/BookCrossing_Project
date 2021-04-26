@@ -1,11 +1,12 @@
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import './Test.css';
 
 const Test = () => {
-  const position = [51.505, -0.09];
   const [books, setBooks] = useState([]);
-
+  const { currentCityLng, currentCityLat } = useSelector((state) => state);
+  const position = [currentCityLat, currentCityLng];
   //tunk - redux
   const getBooks = async () => {
     const response = await fetch('http://localhost:8080/books');
@@ -20,7 +21,7 @@ const Test = () => {
 
   return (
     <div>
-      <Map center={position} zoom={3} scrollWheelZoom={false}>
+      <Map center={position} zoom={8} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
