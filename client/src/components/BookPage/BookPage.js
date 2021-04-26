@@ -49,6 +49,7 @@ function BookPage(props) {
       <h4 className="collection-item center orange-text" style={{ margin: '2rem' }}>{book?.name}</h4>
       <h5 className="collection-item center">Уникальный номер книги: {book?._id}</h5>
       <p className="center" style={{ margin: '2rem' }}>{book?.info}</p>
+      <h6 className="collection-item center blue-text" style={{ margin: '2rem' }}>{book?.moovings[0].adress}</h6>
       <h6 className="" style={{ margin: '2rem' }}>Комментарии:</h6>
       <ul className="collection ">
 
