@@ -11,19 +11,19 @@ function BookPage(props) {
   const { userName } = useSelector((state) => state);
 
 
-const setCommentHandler = async () => {
+  const setCommentHandler = async () => {
 
-  const response = await fetch('http://localhost:8080/books/comment', {
-    method: 'POST',
-    credentials: 'include',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      login: userName,
-      comment: commentText.current.value,
-      bookId: id,
-    }),
-  });
-}
+    const response = await fetch('http://localhost:8080/books/comment', {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        login: userName,
+        comment: commentText.current.value,
+        bookId: id,
+      }),
+    });
+  }
 
 
   useEffect(() => {
@@ -46,23 +46,22 @@ const setCommentHandler = async () => {
 
   return (
     <div className="col s12 m7 container">
-      <h5 className="collection-item center">{book?.name}</h5>
+      <h4 className="collection-item center orange-text" style={{ margin: '2rem' }}>{book?.name}</h4>
       <h5 className="collection-item center">Уникальный номер книги: {book?._id}</h5>
-      <p className="center">{book?.info}</p>
-      <h6 className="">Комментарии:</h6>
+      <p className="center" style={{ margin: '2rem' }}>{book?.info}</p>
+      <h6 className="" style={{ margin: '2rem' }}>Комментарии:</h6>
       <ul className="collection ">
-       
+
         {book && book.comments.map(el => (
           <div>
-             <li className="collection-item avatar">
-        <i className="material-icons circle blue">chat</i>
-      <span className="title">
-    User Name:{el.userName}</span>
-    <p className="center">{el.comments} </p>
-    </li>
-    </div>
-     ))} 
-        
+            <li className="collection-item avatar">
+              <i className="material-icons circle blue">chat</i>
+              <span className="title orange-text">{el.userName}</span>
+              <p className="center ">{el.comments} </p>
+            </li>
+          </div>
+        ))}
+
       </ul>
 
       <input type="text" className="center" placeholder="Ввести комментарий" ref={commentText} />
