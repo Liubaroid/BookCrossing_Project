@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 function GiveBook(props) {
 const history = useHistory();
 const { currentLng, currentLat } = useSelector((state) => state);
+const { userName } = useSelector((state) => state);
 
 function bookGiver(e) {
   e.preventDefault()
@@ -16,6 +17,7 @@ console.log(e.target.bookId.value);
     body: JSON.stringify({
       id: e.target.bookId.value,
       adress: e.target.bookAdress.value,
+      userName: userName,
       latitude: currentLat,
       longitude: currentLng,
     }),
