@@ -21,7 +21,7 @@ const Test = () => {
 
   return (
     <div>
-      <Map center={position} zoom={8} scrollWheelZoom={true}>
+      <Map center={position} zoom={10} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

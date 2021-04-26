@@ -4,11 +4,6 @@ import { types } from './actionTypes';
 const initState = {
   isLogin: false,
   userName: 'none',
-  currentBook: {
-    currentLng: 0,
-    currentLat: 0,
-  },
-
   currentLng: 0,
   currentLat: 0,
   currentCity:  'Moskow',
@@ -22,8 +17,8 @@ export default function reducer(state = initState, { type, payload }) {
       return { ...state, isLogin: true, userName: payload };
     case action.SETCOORDINATES:
       return { ...state, currentLng: payload.lng, currentLat: payload.lat };
-    case action.SETCOORDINATES_2:
-      return { ...state, currentBook: payload };
+    case action.SETCITY:
+        return { ...state, currentCityLng: payload.lng, currentCityLat: payload.lat };
     default:
       return state;
   }
