@@ -46,7 +46,6 @@ function UserPage() {
 
       </ul>
     </div>
-  );
-}
-
-export default UserPage;
+)}
+  
+  export default UserPage; 
