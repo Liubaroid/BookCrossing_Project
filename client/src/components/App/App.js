@@ -20,6 +20,7 @@ function App() {
 
   useEffect(() => {
     tryAuth();
+    
   },[]);
 
    async function tryAuth () {
@@ -30,6 +31,8 @@ function App() {
    const id = result.id;
    if (login) dispatch({ type: 'LOGIN', payload: login });
   }
+
+ 
 
   const { isLogin, userName } = useSelector((state) => state);
      return (
