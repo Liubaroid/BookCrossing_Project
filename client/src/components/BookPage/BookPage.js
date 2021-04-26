@@ -49,7 +49,21 @@ function BookPage(props) {
       <h4 className="collection-item center orange-text" style={{ margin: '2rem' }}>{book?.name}</h4>
       <h5 className="collection-item center">Уникальный номер книги: {book?._id}</h5>
       <p className="center" style={{ margin: '2rem' }}>{book?.info}</p>
-      <h6 className="collection-item center blue-text" style={{ margin: '2rem' }}>{book?.moovings[0].adress}</h6>
+      {book?.currentOwner ? <p className="center" style={{ margin: '2rem' }}>Текущий владелец: {book?.currentOwner}</p> : 
+      <p className="center" style={{ margin: '2rem' }}>Книга сейчас заложена</p>}
+      {/* <h6 className="collection-item center blue-text" style={{ margin: '2rem' }}>{book?.moovings[0].adress}</h6> */}
+      <ul class="collapsible"> 
+      {book?.moovings.map((el)=>(<div> <li>
+       <div class="collapsible-header">
+         <i class="material-icons">place</i>
+         {el.adress};
+         <span class="badge">{el.userName}</span></div>
+     </li></div>))}
+      
+     
+</ul> 
+
+
       <h6 className="" style={{ margin: '2rem' }}>Комментарии:</h6>
       <ul className="collection ">
 
