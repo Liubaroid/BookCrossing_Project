@@ -32,7 +32,7 @@ const Test = () => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {books.map((el) => ( el.isFound ?
+        {books.map((el) => ( !el.isFound ?
           <Marker position={[el.latitude, el.longitude]}>
             <Popup>
               Название : {el.name}. <br />
