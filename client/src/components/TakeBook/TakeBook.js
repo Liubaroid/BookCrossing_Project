@@ -15,7 +15,7 @@ function TakeBook(params) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         currentOwner: userName,
-        id: e.target.bookId.value,
+        id: e.target.bookId.value.trim(),
       }),
     })
       .then(response => response.json())

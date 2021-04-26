@@ -33,7 +33,7 @@ function UserPage() {
             <li className="collection-item" key={el.id}>
               {el.name}
               <a href="" className="secondary-content">
-                <Link to={`/books/${el._id}`}>
+                <Link to={`/books/${el.id}`}>
                   <i class="material-icons">send</i>
                 </Link>
               </a>
@@ -48,7 +48,7 @@ function UserPage() {
             <li className="collection-item" key={el.id}>
               {el.name}
               <a href="" className="secondary-content">
-                <Link to={`/books/${el._id}`}>
+                <Link to={`/books/${el.id}`}>
                   <i class="material-icons">send</i>
                 </Link>
               </a>
