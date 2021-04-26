@@ -11,12 +11,11 @@ const initState = {
 
   currentLng: 0,
   currentLat: 0,
+  currentCity:  'Moskow',
+  currentCityLng: 37.59521484375001,
+  currentCityLat: 55.75938403247252,
 };
 
-// payload ={
-//   currentLng: 232332,
-//   currentLat: 232332,
-// }
 export default function reducer(state = initState, { type, payload }) {
   switch (type) {
     case action.LOGIN:
