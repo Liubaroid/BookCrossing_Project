@@ -5,32 +5,32 @@ import { Link, useHistory } from "react-router-dom";
 
 function Main(props) {
   const history = useHistory()
-   function bookChecker(e) {
+  function bookChecker(e) {
     e.preventDefault()
     let id = e.target.bookId.value
     console.log(id);
     fetch(`http://localhost:8080/books/take/${id}`)
       .then(response => response.json())
       .then(success => success && history.push(`/books/${e.target.bookId.value}`))  // или на главную?
-  
+
 
     // history.push(`/books/${e.target.bookId.value}`)
   }
 
-
-
   return (
-    <div className="center">
+    <div className="">
       <div className="col s12 m7">
-        <h4>Приветственная информация</h4>
-        <div className="card">
+        <h6 className="right-align"style={{ margin: '1rem' }} >Если вы любите ваши книги, позвольте им уйти.
+        (с) The New York Times
+      </h6>
+        <div className="card center">
           <div className="card-content container">
             <div>
-              <h6>
+              {/* <h6>
                 Книги не должны пылиться на полках!
-              </h6>
+              </h6> */}
               <h6 className="left-align">
-                Они хотят путешествовать, дарить знания и радость любителям книг по всему миру.  Вы можете помочь им в этом. Просто оставьте книгу в кафе, хостеле, аэропорту, на вокзале, в парке, где угодно! Или на одной из безопасных полок: ССЫЛКА
+                Книги не должны пылиться на полках! Они хотят путешествовать, дарить знания и радость любителям книг по всему миру.  Вы можете помочь им в этом. Просто оставьте книгу в кафе, хостеле, аэропорту, на вокзале, в парке, где угодно! Или на одной из безопасных полок: ССЫЛКА
             </h6>
               <h6>
                 Представьте…
