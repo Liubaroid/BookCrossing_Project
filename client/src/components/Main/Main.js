@@ -5,13 +5,16 @@ import { Link, useHistory } from "react-router-dom";
 
 function Main(props) {
   const history = useHistory()
-  function bookChecker(e) {
+  async function bookChecker(e) {
     e.preventDefault()
     let id = e.target.bookId.value.trim()
     console.log(id);
-    fetch(`http://localhost:8080/books/take/${id}`)
-      .then(response => response.json())
-      .then(success => success && history.push(`/books/${e.target.bookId.value}`))
+   const response = await fetch(`http://localhost:8080/books/take/${id}`)
+      if (response.status !==200) {
+        alert('Книги с таким кодом нет');
+        return
+      }
+      history.push(`/books/${e.target.bookId.value}`);
   }
 
   return (
