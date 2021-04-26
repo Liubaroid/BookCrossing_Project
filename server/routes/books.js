@@ -42,13 +42,18 @@ router.patch('/give', async (req, res) => {
 
 //проверка наличия книги по id
 
-// router.get('/take/:id', async (req, res) => {
-
-//   })
+router.get('/take/:id', async (req, res) => {
+ const id = req.params.id
+ console.log(id);
+ const book  = await Book.findOne({ _id: id });
+ console.log(book);
+  if (book) {
+    res.status(200).json({success: true})
+  } res.status(404)
+  })
 
 router.get('/', async (req, res) => {
 let books = await Book.find()
-console.log(books);
   res.json({ books });
 })
 
