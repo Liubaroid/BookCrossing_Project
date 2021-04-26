@@ -32,14 +32,14 @@ const pass = useRef();
     <div className="row">
     <form className="col s12 center">
     <h4>Регистрация</h4>
-      <div className="row">
+      <div className="">
         <div className="input-field col s12">
           <input ref={name} id="last_name" type="text" className="validate"/>
           <label htmlFor="last_name">Имя</label>
         </div>
       </div>
 
-      <div className="row">
+      <div className="">
         <div className="input-field col s12">
           <input ref={pass} id="password" type="password" className="validate"/>
           <label htmlFor="password">Пароль</label>
