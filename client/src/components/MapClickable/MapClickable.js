@@ -1,5 +1,5 @@
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import "./Test.css" 
 
@@ -11,6 +11,9 @@ const Test = () => {
         setPosition(e.latlng);
         dispatch({type: 'SETCOORDINATES', payload : {lat: e.latlng.lat, lng:e.latlng.lng} })
   }
+  useEffect(() => {
+    setPosition([currentCityLat, currentCityLng]);
+  },[currentCityLng])
   return ( 
     <div>
     <Map center={position} zoom={10} scrollWheelZoom={false} onClick={handleClick}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import MapClickable from '../MapClickable/MapClickable';
+import CityClicker from '../CityClicker/CityClicker';
 import { useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useHistory } from "react-router-dom";
@@ -71,6 +72,7 @@ const submitHandler = async() => {
       </div>
       <div className="">
             <h6>Выбери место на карте</h6>
+            <CityClicker/>
           </div>
             <div className="">
               <MapClickable/>
