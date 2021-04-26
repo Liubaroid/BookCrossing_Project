@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import { useHistory } from 'react-router';
 
-function TakeBook() {
+function TakeBook(params) {
   let userName = useSelector((state => state))
   const history = useHistory()
   // console.log('textInput.current.value', textInput.current.focus());
