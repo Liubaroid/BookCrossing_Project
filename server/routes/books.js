@@ -40,6 +40,23 @@ router.patch('/give', async (req, res) => {
   res.status(200).json({success: true})
 })
 
+
+router.post('/comment', async (req, res) => {
+  const { login, comment, bookId } = req.body;
+  console.log(req.body);
+  const book = await Book.findOne({_id: bookId});
+  book.comments.push({ userName: login, comments: comment }),
+  await book.save();
+  res.status(200).json({success: true})
+})
+
+router.get('/comment/:bookId', async (req, res) => {
+  const bookId = req.params.bookId;
+  console.log(bookId);
+  const book = await Book.findOne({_id: bookId});
+  res.status(200).json(book.comments)
+})
+
 //проверка наличия книги по id
 
 // router.get('/take/:id', async (req, res) => {
