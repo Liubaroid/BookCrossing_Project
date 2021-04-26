@@ -9,6 +9,7 @@ const initState = {
   currentCity:  'Moskow',
   currentCityLng: 37.59521484375001,
   currentCityLat: 55.75938403247252,
+  currentBookId:'',
 };
 
 export default function reducer(state = initState, { type, payload }) {
@@ -19,6 +20,8 @@ export default function reducer(state = initState, { type, payload }) {
       return { ...state, currentLng: payload.lng, currentLat: payload.lat };
     case action.SETCITY:
         return { ...state, currentCityLng: payload.lng, currentCityLat: payload.lat };
+    case action.SETBOOKID:
+          return { ...state, currentBookId: payload };
     default:
       return state;
   }

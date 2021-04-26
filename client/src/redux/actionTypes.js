@@ -3,6 +3,7 @@ export const SETCOORDINATES = 'SETCOORDINATES';
 export const SETCOORDINATES_2 = 'SETCOORDINATES_2';
 export const BOOK = 'BOOK';
 export const SETCITY = 'SETCITY';
+export const SETBOOKID = 'SETBOOKID';
 
 export const types = {
   LOGIN: 'LOGIN',
