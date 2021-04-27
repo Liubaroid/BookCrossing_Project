@@ -6,6 +6,7 @@ const bookSchema = new mongoose.Schema({
 
   name: { type: String, required: true },
   info: { type: String, default: '' },
+  author: { type: String, default: '' },
   adress: { type: String, default: '' },
   latitude: { type: Number, default: '' },
   longitude: { type: Number, default: '' },

@@ -11,6 +11,7 @@ const history = useHistory();
 const adress = useRef();
 const bookName = useRef();
 const bookDescription = useRef();
+const bookAuthor = useRef();
 
 const submitHandler = async() => {
   const addBookResponse = await fetch('http://localhost:8080/book', {
@@ -20,6 +21,7 @@ const submitHandler = async() => {
     body: JSON.stringify({
       creator: userName,
       name: bookName.current.value,
+      author: bookAuthor.current.value,
       info: bookDescription.current.value,
       adress: adress.current.value,
       latitude: currentLat,
@@ -27,7 +29,7 @@ const submitHandler = async() => {
     }),
   });
   let book = await addBookResponse.json()
-  history.push(`/books/${book._id}`);
+  history.push(`/books/${book.id}`);
 }
   const { currentLng, currentLat, userName, currentAdress } = useSelector((state) => state);
   return (
@@ -49,7 +51,12 @@ const submitHandler = async() => {
           <label htmlFor="book-name">Название книги</label>
         </div>
       </div>
-
+      <div className="">
+        <div className="input-field col s12">
+          <input id="book-name" type="text" className="validate" ref={bookAuthor}/>
+          <label htmlFor="book-name">Автор книги</label>
+        </div>
+      </div>
       <div className="">
         <div className="input-field col s12">
           <input id="book-info" type="text" className="validate" ref={bookDescription}/>

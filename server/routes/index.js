@@ -24,6 +24,7 @@ router.post('/book', async (req, res) => {
   let book = await Book.create({
     id,
     name: String(req.body.name),
+    author: String(req.body.author),
     info: info,
     creator: creator,
     adress: adress,
