@@ -8,38 +8,51 @@ const app = express();
 //  Добавляет книгу в базу
 
 router.post('/book', async (req, res) => {
-  let { creator, info, adress, latitude, longitude } = req.body;
+  let { creator, info, adress, latitude, longitude, author, name } = req.body;
+
+  console.log('=======>>>> NEW BOOK!!!!');
 
   let runWhile = true;
+  let id = null;
 
   while (runWhile) {
-    const id = await nanoid(7);
+    primaryId = await nanoid(7);
+    // даёт случайный символ от 1 до 9
+    const rndDigint = Math.round(Math.random()) * 9;
+    //заменяет пробелы и подчёркивания на эту цифру
+    id = primaryId.replace(/[-_]/g, rndDigint);
     const findItem = await Book.find({ id });
-    if (!findItem) {
-      runWhile = false;
-    }
+    if (!findItem.length) runWhile = false;
   }
 
-  console.log(id);
-  let book = await Book.create({
-    id,
-    name: String(req.body.name),
-    author: String(req.body.author),
-    info: info,
-    creator: creator,
-    adress: adress,
-    latitude: latitude,
-    longitude: longitude,
-    moovings: {
-      userName: creator,
+  console.log(' NEW ID  ===>>', id);
+
+  try {
+    let book = await Book.create({
+      id,
+      name: name,
+      author: author,
+      info: info,
+      creator: creator,
       adress: adress,
       latitude: latitude,
       longitude: longitude,
-    },
-  });
+      moovings: {
+        userName: creator,
+        adress: adress,
+        latitude: latitude,
+        longitude: longitude,
+      },
+    });
 
-  console.log(' book ==>', book);
-  res.json(book);
+    await book.save();
+    console.log(' book ==>', book);
+    res.json(book);
+  } catch (e) {
+    console.log('======>');
+    console.log(e);
+    res.send(null);
+  }
 });
 
 // Выдаёт массив книг, если пользователь имеет к ним отношение
