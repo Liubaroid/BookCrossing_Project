@@ -10,6 +10,7 @@ const initState = {
   currentCityLng: 37.59521484375001,
   currentCityLat: 55.75938403247252,
   currentBookId:'',
+  currentAdress:'test',
 };
 
 export default function reducer(state = initState, { type, payload }) {
@@ -18,6 +19,8 @@ export default function reducer(state = initState, { type, payload }) {
       return { ...state, isLogin: true, userName: payload };
     case action.SETCOORDINATES:
       return { ...state, currentLng: payload.lng, currentLat: payload.lat };
+    case action.SETADRESS:
+        return { ...state, currentAdress: payload };
     case action.SETCITY:
         return { ...state, currentCityLng: payload.lng, currentCityLat: payload.lat };
     case action.SETBOOKID:

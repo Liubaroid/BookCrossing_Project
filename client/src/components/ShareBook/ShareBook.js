@@ -29,7 +29,7 @@ const submitHandler = async() => {
   let book = await addBookResponse.json()
   history.push(`/books/${book._id}`);
 }
-  const { currentLng, currentLat, userName } = useSelector((state) => state);
+  const { currentLng, currentLat, userName, currentAdress } = useSelector((state) => state);
   return (
     <div className="center">
         <div className="col s12 m7">
@@ -39,7 +39,7 @@ const submitHandler = async() => {
             </div>
             <div className="">
         <div className="input-field col s12">
-          <input id="book-adress" type="text" className="validate" ref={adress}/>
+          <input id="book-adress" type="text" className="validate" ref={adress} value={currentAdress}/>
           <label htmlFor="book-adress">Адрес книги</label>
         </div>
       </div>

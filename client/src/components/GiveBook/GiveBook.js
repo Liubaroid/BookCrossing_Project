@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 function GiveBook(props) {
 const history = useHistory();
-const { currentLng, currentLat } = useSelector((state) => state);
+const { currentLng, currentLat, currentAdress } = useSelector((state) => state);
 const { userName } = useSelector((state) => state);
 
 function bookGiver(e) {
@@ -40,7 +40,7 @@ console.log(e.target.bookId.value);
           </div>
           <div className="">
             <div className="input-field col s12">
-              <input name='bookAdress' type="text" className="validate" placeholder="Ввести адрес книги"/>
+              <input name='bookAdress' type="text" className="validate" placeholder="Ввести адрес книги" value={currentAdress}/>
             </div>
           </div>
           <div className="">
