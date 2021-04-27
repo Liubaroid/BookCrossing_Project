@@ -22,11 +22,16 @@ router.patch('/take', async (req, res) => {
   const { currentOwner, id } = req.body;
   // console.log(id );
   const book = await Book.findOne({ id: id });
-  book.currentOwner = currentOwner.userName,
+  if (!book) {
+    res.status(500).end();
+    return
+  } else {
+    book.currentOwner = currentOwner.userName,
     book.founders.push(currentOwner.userName),
     book.isFound = true,
     await book.save()
   res.status(200).json({ success: true })
+  }
 })
 
 router.patch('/give', async (req, res) => {
