@@ -1,6 +1,6 @@
 const express = require('express');
 const Book = require('../models/book');
-const { nanoid } = require('nanoid');
+const { nanoid } = require('nanoid/async');
 const router = express.Router();
 const moment = require('moment');
 const app = express();
@@ -8,9 +8,21 @@ const app = express();
 //  Добавляет книгу в базу
 
 router.post('/book', async (req, res) => {
-  let { creator, info, adress, latitude, longitude } = req.body
+  let { creator, info, adress, latitude, longitude } = req.body;
+
+  let runWhile = true;
+
+  while (runWhile) {
+    const id = await nanoid(7);
+    const findItem = await Book.find({ id });
+    if (!findItem) {
+      runWhile = false;
+    }
+  }
+
+  console.log(id);
   let book = await Book.create({
-    id: nanoid(),
+    id,
     name: String(req.body.name),
     info: info,
     creator: creator,
@@ -22,9 +34,10 @@ router.post('/book', async (req, res) => {
       adress: adress,
       latitude: latitude,
       longitude: longitude,
-    }
+    },
   });
-  await book.save();
+
+  console.log(' book ==>', book);
   res.json(book);
 });
 
@@ -34,9 +47,5 @@ router.post('/book', async (req, res) => {
 //  // какая-то логика
 //   res.end();
 // });
-
-
-
-
 
 module.exports = router;
