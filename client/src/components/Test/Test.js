@@ -38,7 +38,6 @@ const Test = () => {
               Название : {el.name}. <br />
               Адрес: {el.adress} <br />
               Создатель: {el.creator} <br/>
-              Номер книги: {el.id} <br/>
               <Link to='/take'>Взять книгy</Link>
             </Popup>
           </Marker> : null

@@ -2,6 +2,7 @@ import React from 'react';
 import MapClickable from '../MapClickable/MapClickable';
 import { useSelector } from 'react-redux'
 import { useHistory } from "react-router-dom";
+import CityClicker from '../CityClicker/CityClicker'
 
 function GiveBook(props) {
 const history = useHistory();
@@ -56,6 +57,9 @@ console.log(e.target.bookId.value);
           </div>
           <div className="">
             <h6>Выбери место на карте</h6>
+          </div>
+          <div className="center">
+            <CityClicker />
           </div>
           <div className="">
             <MapClickable />

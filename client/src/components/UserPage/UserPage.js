@@ -24,7 +24,6 @@ function UserPage() {
     <div>
       <div className="center">
         <h4 className="orange-text" style={{ margin: '2rem' }}>Привет, {userName} !</h4>
-        <p style={{ margin: '2rem' }}>Информация для пользователя</p>
       </div>
       <ul className="collection with-header">
         <h5 className="collection-header">Твои книги:</h5>
