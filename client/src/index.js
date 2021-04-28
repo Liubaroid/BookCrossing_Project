@@ -7,8 +7,11 @@ import thunk from 'redux-thunk';
 import reducer from './redux/reducer';
 import App from './components/App/App';
 import './index.css';
+import M from 'materialize-css'; 
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+let elems = document.querySelectorAll('.dropdown-trigger');
+M.Dropdown.init(elems, {inDuration: 300, outDuration: 225});
 
 ReactDOM.render(
   <React.StrictMode>
