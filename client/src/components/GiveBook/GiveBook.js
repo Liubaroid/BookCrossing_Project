@@ -36,7 +36,7 @@ console.log(e.target.bookId.value);
             <h5>Передай книгу дальше!</h5>
           </div>
           <div className="input-field col s12">
-            <input type="text" name='bookId' className="validate" placeholder="Ввести номер книги"/>
+            <input type="text" name='bookId' className="validate" placeholder="Ввести идентификатор книги"/>
           </div>
           <div className="">
             <div className="input-field col s12">
@@ -45,15 +45,13 @@ console.log(e.target.bookId.value);
           </div>
           <div className="">
             <div className="input-field col s12">
-              <input id="book-lat" type="text" className="validate" value={currentLat}/>
-              <label htmlFor="book-lat">Широта</label>
+              <input id="book-lat" type="text" className="validate" placeholder='Широта' value={currentLat}/>
             </div>
           </div>
 
           <div className="">
             <div className="input-field col s12">
-              <input id="book-long" type="text" className="validate" value={currentLng}/>
-              <label htmlFor="book-long">Долгота</label>
+              <input id="book-long" type="text" className="validate" placeholder='Долгота' value={currentLng}/>
             </div>
           </div>
           <div className="">

@@ -35,7 +35,7 @@ function TakeBook(params) {
           <div className="card-content">
             <h5>Возьми книгу!</h5>
           </div>
-          <input type="text" name='bookId' className="center" placeholder="Ввести номер книги" />
+          <input type="text" name='bookId' className="center" placeholder="Ввести идентификатор книги" />
           <button
             className="waves-effect waves-light btn orange">Взять</button>
         </form>

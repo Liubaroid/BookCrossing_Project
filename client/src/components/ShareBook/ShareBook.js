@@ -41,40 +41,34 @@ const submitHandler = async() => {
             </div>
             <div className="">
         <div className="input-field col s12">
-          <input id="book-adress" type="text" className="validate" ref={adress} value={currentAdress}/>
-          <label htmlFor="book-adress">Адрес книги</label>
+          <input id="book-adress" type="text" className="validate" placeholder='Адрес книги' ref={adress} value={currentAdress}/>
         </div>
       </div>
             <div className="">
         <div className="input-field col s12">
-          <input id="book-name" type="text" className="validate" ref={bookName}/>
-          <label htmlFor="book-name">Название книги</label>
+          <input id="book-name" type="text" className="validate" placeholder='Название книги' ref={bookName}/>
         </div>
       </div>
       <div className="">
         <div className="input-field col s12">
-          <input id="book-name" type="text" className="validate" ref={bookAuthor}/>
-          <label htmlFor="book-name">Автор книги</label>
+          <input id="book-name" type="text" className="validate" placeholder='Автор книги' ref={bookAuthor}/>
         </div>
       </div>
       <div className="">
         <div className="input-field col s12">
-          <input id="book-info" type="text" className="validate" ref={bookDescription}/>
-          <label htmlFor="book-info">Описание книги</label>
+          <input id="book-info" type="text" className="validate" placeholder='Описание книги' ref={bookDescription}/>
         </div>
       </div>
 
      <div className="">
         <div className="input-field col s12">
-          <input id="book-info" type="text" className="validate"value={currentLat}/>
-          <label for="book-info">Lat</label>
+          <input id="book-info" type="text" className="validate" placeholder='Широта' value={currentLat}/>
         </div>
       </div>
 
       <div className="">
         <div className="input-field col s12">
-          <input id="book-info" type="text" className="validate" value={currentLng}/>
-          <label for="book-info">Lng</label>
+          <input id="book-info" type="text" className="validate" placeholder='Долгота' value={currentLng}/>
         </div>
       </div>
       <div className="">

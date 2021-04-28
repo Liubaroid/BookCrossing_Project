@@ -46,7 +46,7 @@ function BookPage(props) {
     <div className="col s12 m7 container">
       <h4 className="collection-item center orange-text" style={{ margin: '2rem' }}>{book?.name}</h4>
       <h5 className="collection-item center" style={{ margin: '1rem' }}>Автор: {book?.author}</h5>
-      <h5 className="collection-item center">Уникальный номер книги: {book?.id}</h5>
+      <h5 className="collection-item center">Уникальный идентификатор книги: {book?.id}</h5>
       <p className="center" style={{ margin: '2rem' }}>{book?.info}</p>
       {/* {book?.currentOwner ? <p className="center" style={{ margin: '2rem' }}>Текущий владелец: {book?.currentOwner}</p> : 
       <p className="center" style={{ margin: '2rem' }}>Книга свободна</p>} */}
