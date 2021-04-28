@@ -8,9 +8,8 @@ function Main(props) {
   async function bookChecker(e) {
     e.preventDefault()
     let id = e.target.bookId.value.trim()
-    console.log(id);
-   const response = await fetch(`http://localhost:8080/books/take/${id}`)
-      if (response.status !==200) {
+   const response = await fetch(`http://localhost:8080/books/take/${id}`);
+      if (response.status === 500) {
         alert('Книги с таким кодом нет');
         return
       }

@@ -2,15 +2,15 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import { useHistory } from 'react-router';
 
-function TakeBook(params) {
+ function TakeBook(params) {
   let userName = useSelector((state => state))
   const history = useHistory()
   // console.log('textInput.current.value', textInput.current.focus());
 
-  function bookTaker(e) {
+  async function bookTaker(e) {
     e.preventDefault()
 
-    fetch('http://localhost:8080/books/take', {
+    const response = await fetch('http://localhost:8080/books/take', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -18,8 +18,9 @@ function TakeBook(params) {
         id: e.target.bookId.value.trim(),
       }),
     })
-      .then(response => response.json())
-      .then(success => success && history.push(`/books/${e.target.bookId.value}`))
+      if (response.status === 500) {
+        alert('Heт такой книги'); 
+      } else { history.push(`/books/${e.target.bookId.value}`); }
 
   }
 
