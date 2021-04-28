@@ -10,7 +10,7 @@ const initState = {
   currentCityLng: 37.59521484375001,
   currentCityLat: 55.75938403247252,
   currentBookId:'',
-  currentAdress:'test',
+  currentAdress:'',
 };
 
 export default function reducer(state = initState, { type, payload }) {
