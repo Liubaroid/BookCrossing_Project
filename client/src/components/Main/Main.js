@@ -47,7 +47,7 @@ function Main(props) {
               <Link to='/give'>Передать дальше</Link>
             </div>
             <form onSubmit={bookChecker} className="card-action container center">
-              <input type="text" name='bookId' className="center" placeholder="Ввести номер книги" />
+              <input type="text" name='bookId' className="center" placeholder="Ввести идентификатор книги" />
               <div>
                 <button className="waves-effect waves-light btn orange" style={{ margin: '1rem' }}>Найти книгy</button>
               </div>
