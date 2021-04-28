@@ -9,10 +9,10 @@ const history = useHistory();
 const { currentLng, currentLat, currentAdress } = useSelector((state) => state);
 const { userName } = useSelector((state) => state);
 
-function bookGiver(e) {
+async function bookGiver(e) {
   e.preventDefault()
-console.log(e.target.bookId.value);
-  fetch('http://localhost:8080/books/give', {
+
+  const response  = await fetch('http://localhost:8080/books/give', {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -23,8 +23,11 @@ console.log(e.target.bookId.value);
       longitude: currentLng,
     }),
   })
-    .then(response => response.json())
-    .then(success => success && history.push(`/books/${e.target.bookId.value}`))  // или на главную?
+    if (response.status === 500) {
+      alert('Неправильный идентификатор книги');
+    } else { 
+      history.push(`/books/${e.target.bookId.value}`)
+    }  // или на главную?
 
 }
 
