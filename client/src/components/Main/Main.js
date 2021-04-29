@@ -48,9 +48,24 @@ function Main(props) {
             </div>
 
             <div className="card-action" style={{ margin: "1rem" }}>
-              <Link to="/share">Поделиться книгой</Link>
-              <Link to="/take">Взять книгy</Link>
-              <Link to="/give">Передать дальше</Link>
+              <Link to="/share">
+                <a class="waves-effect waves-light btn-large blue">
+                  <i class="large material-icons left">add_circle</i>
+                  Поделиться книгой
+                </a>
+              </Link>
+              <Link to="/take">
+                <a class="waves-effect waves-light btn-large blue">
+                  <i class="large material-icons left">class</i>
+                  Взять книгу
+                </a>
+              </Link>
+              <Link to="/give">
+                <a class="waves-effect waves-light btn-large blue">
+                  <i class="large material-icons left">exit_to_app</i>
+                  Передать дальше
+                </a>
+              </Link>
             </div>
             <form
               onSubmit={bookChecker}
