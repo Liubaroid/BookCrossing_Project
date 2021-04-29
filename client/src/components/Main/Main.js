@@ -26,8 +26,10 @@ function Main(props) {
         <div className="card center">
           {/* <h4 className="#e3f2fd blue lighten-5" style={{padding: '1rem', height: '5rem', margin: '1rem' }}>Приветствие</h4> */}
           <div className="card-content container">
-
-            <div className="">
+          <div style={{ margin: '1rem' }}>
+            <Link to='/about'><h5 className="blue-text">Как это работает</h5></Link>
+            </div>
+            {/* <div className="">
               <h6 className="left-align">
                 Книги не должны пылиться на полках! Они хотят путешествовать, дарить знания и радость любителям книг по всему миру.  Вы можете помочь им в этом. Просто оставьте книгу в кафе, хостеле, аэропорту, на вокзале, в парке, где угодно! Или на одной из безопасных полок: ССЫЛКА
             </h6>
@@ -40,7 +42,7 @@ function Main(props) {
               <h6>
                 Следите как и с кем путешествует ваша книга!
             </h6>
-            </div>
+            </div> */}
             <div className="card-action" style={{ margin: '1rem' }}>
               <Link to='/share'>Поделиться книгой</Link>
               <Link to='/take'>Взять книгy</Link>

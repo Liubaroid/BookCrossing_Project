@@ -14,6 +14,7 @@ import TakeBook from "../TakeBook/TakeBook";
 import UserPage from "../UserPage/UserPage";
 import BookPage from "../BookPage/BookPage";
 import GiveBook from "../GiveBook/GiveBook";
+import About from "../About/About";
 
 function App() {
   const dispatch = useDispatch();
@@ -50,6 +51,9 @@ function App() {
           </Route>
           <Route path='/test'>
             <Test />
+          </Route>
+          <Route path='/about'>
+            <About />
           </Route>
           <Route path='/share'>
             <ShareBook />
