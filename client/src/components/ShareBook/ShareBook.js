@@ -40,48 +40,57 @@ const submitHandler = async() => {
               <h5>Поделись книгой!</h5>
             </div>
             <div className="">
-        <div className="input-field col s12">
+
+
+            <div class="row">
+
+      <div class="col s6">
+            <CityClicker/>
+      <div className="input-field col s12">
           <input id="book-adress" type="text" className="validate" placeholder='Адрес книги' ref={adress} value={currentAdress}/>
         </div>
-      </div>
-            <div className="">
+            
         <div className="input-field col s12">
           <input id="book-name" type="text" className="validate" placeholder='Название книги' ref={bookName}/>
         </div>
-      </div>
-      <div className="">
+      
         <div className="input-field col s12">
           <input id="book-name" type="text" className="validate" placeholder='Автор книги' ref={bookAuthor}/>
         </div>
-      </div>
-      <div className="">
+      
         <div className="input-field col s12">
           <input id="book-info" type="text" className="validate" placeholder='Описание книги' ref={bookDescription}/>
         </div>
-      </div>
 
-     <div className="">
         <div className="input-field col s12">
           <input id="book-info" type="text" className="validate" placeholder='Широта' value={currentLat}/>
         </div>
-      </div>
 
-      <div className="">
         <div className="input-field col s12">
           <input id="book-info" type="text" className="validate" placeholder='Долгота' value={currentLng}/>
         </div>
+
       </div>
-      <div className="">
-            <h6>Выбери место на карте</h6>
-            <CityClicker/>
-          </div>
-            <div className="">
+
+      <div class="col s6">
+      <h6>Выбери место на карте</h6>
+      <br/>
+      <br/>
+      <div className="mar6p">
               <MapClickable/>
+              <br/>
+              <button className="waves-effect waves-light btn orange" onClick = {submitHandler} style={{margin: '1rem'}}>Поделиться</button>
             </div>
-      <button className="waves-effect waves-light btn orange" onClick = {submitHandler} style={{margin: '1rem'}}>Поделиться</button>
+      </div>
+    </div>
+
+
+       
           </div>
         </div>
-      </div>
+        </div>
+        </div>
+      
   );
 }
 

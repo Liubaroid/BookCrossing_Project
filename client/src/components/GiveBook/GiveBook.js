@@ -27,19 +27,22 @@ async function bookGiver(e) {
       alert('Неправильный идентификатор книги');
     } else { 
       history.push(`/books/${e.target.bookId.value}`)
-    }  // или на главную?
+    }  
 
 }
 
   return (
     <div className="center">
-      <div className="col s12 m7">
+<div className="col s12 m7">
       <form onSubmit={bookGiver} className="card">
         <div className="card">
           <div className="card-content">
             <h5>Передай книгу дальше!</h5>
           </div>
-          <div className="input-field col s12">
+       <div class="row">
+      <div class="col s6">
+      <CityClicker />
+      <div className="input-field col s12">
             <input type="text" name='bookId' className="validate" placeholder="Ввести идентификатор книги"/>
           </div>
           <div className="">
@@ -52,23 +55,32 @@ async function bookGiver(e) {
               <input id="book-lat" type="text" className="validate" placeholder='Широта' value={currentLat}/>
             </div>
           </div>
-
           <div className="">
             <div className="input-field col s12">
               <input id="book-long" type="text" className="validate" placeholder='Долгота' value={currentLng}/>
             </div>
           </div>
-          <div className="">
+          <button className="waves-effect waves-light btn orange" style={{margin: '1rem'}}>
+            Передать дальше</button>
+
+      </div>
+      
+      <div class="col s6">
+      <div className="">
             <h6>Выбери место на карте</h6>
-          </div>
-          <div className="center">
-            <CityClicker />
+            
           </div>
           <div className="">
             <MapClickable />
           </div>
-          <button className="waves-effect waves-light btn orange" style={{margin: '1rem'}}>
-            Передать дальше</button>
+
+
+      </div>
+
+    </div>
+          
+          
+          
         </div>
         </form>
       </div>
