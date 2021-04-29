@@ -13,14 +13,6 @@ code {
     monospace;
 }
 
-.leaflet-container {
-  width: 98%;
-  height: 50vh;
-  border-style: dashed;
-  border-color: black;
-  border-width: 1pt;
-}
-
 .mar6p {
   margin-bottom: 15px;
 }
