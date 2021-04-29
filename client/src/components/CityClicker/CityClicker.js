@@ -39,7 +39,7 @@ function CityClicker(props) {
   return (
     <div>
       <a
-        class="dropdown-trigger btn w-20"
+        class="dropdown-trigger btn w-20 blue"
         href="#"
         data-target="dropdown1"
         style={{ margin: "1rem" }}
