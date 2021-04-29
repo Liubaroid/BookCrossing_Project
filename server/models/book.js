@@ -1,33 +1,34 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const bookSchema = new mongoose.Schema({
   // уникальный айдишник должен быть
   id: { type: String, unique: true },
 
   name: { type: String, required: true },
-  info: { type: String, default: '' },
-  author: { type: String, default: '' },
-  adress: { type: String, default: '' },
-  latitude: { type: Number, default: '' },
-  longitude: { type: Number, default: '' },
+  info: { type: String, default: "" },
+  author: { type: String, default: "" },
+  adress: { type: String, default: "" },
+  description: { type: String, default: "" },
+  latitude: { type: Number, default: "" },
+  longitude: { type: Number, default: "" },
   isFound: { type: Boolean, default: false },
   comments: [
     {
-      userName: { type: String, default: '' },
-      comments: { type: String, default: '' },
+      userName: { type: String, default: "" },
+      comments: { type: String, default: "" },
     },
   ],
   moovings: [
     {
-      userName: { type: String, default: '' },
-      adress: { type: String, default: '' },
-      latitude: { type: Number, default: '' },
-      longitude: { type: Number, default: '' },
+      userName: { type: String, default: "" },
+      adress: { type: String, default: "" },
+      latitude: { type: Number, default: "" },
+      longitude: { type: Number, default: "" },
     },
   ],
-  creator: { type: String, default: '' },
-  founders: [{ type: String, default: '' }],
-  currentOwner: { type: String, default: '' },
+  creator: { type: String, default: "" },
+  founders: [{ type: String, default: "" }],
+  currentOwner: { type: String, default: "" },
 });
 
-module.exports = mongoose.model('Book', bookSchema);
+module.exports = mongoose.model("Book", bookSchema);

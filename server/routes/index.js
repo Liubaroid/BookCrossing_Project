@@ -1,16 +1,25 @@
-const express = require('express');
-const Book = require('../models/book');
-const { nanoid } = require('nanoid/async');
+const express = require("express");
+const Book = require("../models/book");
+const { nanoid } = require("nanoid/async");
 const router = express.Router();
-const moment = require('moment');
+const moment = require("moment");
 const app = express();
 
 //  Добавляет книгу в базу
 
-router.post('/book', async (req, res) => {
-  let { creator, info, adress, latitude, longitude, author, name } = req.body;
+router.post("/book", async (req, res) => {
+  let {
+    creator,
+    info,
+    adress,
+    latitude,
+    longitude,
+    author,
+    name,
+    description,
+  } = req.body;
 
-  console.log('=======>>>> NEW BOOK!!!!');
+  console.log("=======>>>> NEW BOOK!!!!");
 
   let runWhile = true;
   let id = null;
@@ -25,12 +34,13 @@ router.post('/book', async (req, res) => {
     if (!findItem.length) runWhile = false;
   }
 
-  console.log(' NEW ID  ===>>', id);
+  console.log(" NEW ID  ===>>", id);
 
   try {
     let book = await Book.create({
       id,
       name: name,
+      description: description,
       author: author,
       info: info,
       creator: creator,
@@ -46,10 +56,10 @@ router.post('/book', async (req, res) => {
     });
 
     await book.save();
-    console.log(' book ==>', book);
+    console.log(" book ==>", book);
     res.json(book);
   } catch (e) {
-    console.log('======>');
+    console.log("======>");
     console.log(e);
     res.send(null);
   }
