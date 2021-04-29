@@ -27,7 +27,7 @@ function CityClicker(props) {
   return (
 
     <div>
-      <a class='dropdown-trigger btn w-20' href='#' data-target='dropdown1'>Выбери город</a>
+      <a class='dropdown-trigger btn-flat white' href='#' data-target='dropdown1' style={{ margin: '1rem' }}>Выбери город</a>
       <ul id='dropdown1' class='dropdown-content dropdown w-20'>
         <li><a href="#!" constrainWidth onClick={moskowHandler}>Москва</a></li>
         <li><a href="#!" constrainWidth onClick={piterHandler}>Санкт-Петербург</a></li>
