@@ -8,7 +8,8 @@ function Nav(props) {
     <div className="navbar-fixed">
     <nav className='blue'>
       <div className="nav-wrapper blue container">
-        <a href="#" className="brand-logo left hide-on-med-and-down">КнигоЗакладчик</a>
+        {/* <img src='logoBook.jpg' className="brand-logo left hide-on-med-and-down" alt="logo" style={{height: '100%'}}/> */}
+        <img src='11.jpg' className="brand-logo left hide-on-med-and-down" alt="logo" style={{height: '100%'}}/>
         <ul id="nav-mobile" className="right">
         {(isLogin) ? <li><Link to='/'>Главная</Link></li> : null}
         {(isLogin) ? <li><Link to='/about'>Как это работает</Link></li> : null}
