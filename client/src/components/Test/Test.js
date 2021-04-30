@@ -39,8 +39,8 @@ const Test = () => {
                 Адрес: {el.adress} <br />
                 Место закладки: {el.description} <br />
                 Первозакладчик: {el.creator} <br />
-                Latitude: {el.latitude} <br />
-                Longitude: {el.longitude} <br />
+                Широта: {el.latitude} <br />
+                Долгота: {el.longitude} <br />
                 <Link to="/take">Взять книгy</Link>
               </Popup>
             </Marker>
