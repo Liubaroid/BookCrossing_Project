@@ -6,5 +6,5 @@ npm i
 Для запуска в папке client:
 yarn start
 
-В папке сервер:
+В папке server:
 npm start
