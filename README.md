@@ -8,7 +8,6 @@
 npm i
 ```
 
-### Running
 
 Для запуска в папке client:
 
